@@ -91,7 +91,8 @@ define('DOMAIN_UTAMA', 'localhost:8080');
 define('DOMAIN_UTAMA_WWW', 'localhost:8080');
 
 
-//base url dinamis
+// Dynamic base URL
 $base = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']) : 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']);
 
+// Define BASE constant if not defined
 defined('BASE') || define('BASE', $base);
