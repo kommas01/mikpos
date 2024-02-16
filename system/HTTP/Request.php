@@ -420,14 +420,14 @@ class Request extends Message implements RequestInterface
 			$value = $this->globals[$method][$index] ?? null;
 		}
 
-		// Cannot filter these types of data automatically...
-		if (is_array($value) || is_object($value) || is_null($value))
-		{
-			return $value;
-		}
+// Cannot filter these types of data automatically...
+if (is_array($value) || is_object($value) || is_null($value))
+{
+    return $value;
+}
 
-		return filter_var($value, $filter, $flags);
-	}
+// Provide an empty array as the third argument
+return filter_var($value, $filter, $flags, []);
 
 	//--------------------------------------------------------------------
 
